@@ -332,10 +332,6 @@ header.sticky{
 	margin-right: 15px;
 	transition: all .45s ease;
 }
-.bxl-facebook {
-    background: var(--main-color);;
-    color: white;
-  }
 .contact-icons i:hover{
 	background: var(--text-color);
 	color: var(--main-color);
