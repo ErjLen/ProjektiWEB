@@ -184,12 +184,14 @@ header.sticky{
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	align-items: center;
-	gap: 1.5rem;
+	gap: 10rem;
+    margin-top: 0%;
 }
 .about-img img{
-	max-width: 530px;
+	max-width: 500px;
 	height: auto;
 	width: 100%;
+    margin-left: 4px;
 	border-radius: 8px;
 }
 .about-text h2{
