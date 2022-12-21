@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel = "stylesheet" href = "style.css" />
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+	
 
 </head>
 <body>
@@ -24,10 +25,6 @@
 
     <section class="home" id="home">
 		<div class="home-text">
-			<div class="slide">
-				<span class="one">Welcome to</span>
-				<!--<span class="two">I'm</span>-->
-			</div>
 			<h1>Thinking Cube</h1>
 			<h3>Space to <span>learn, grow, explore.</span></h3>
 			<p></p>
@@ -40,77 +37,70 @@
 	</section>
     <section class="services" id="services">
 		<div class="main-text">
-			<p></p>
-			<h2><span>Top</span> Books</h2>
+			<h2>Best Books for <span class = "h">Holidays</span></h2>
+			<br>
+			<button class="pre-btn"><img src="images/arrow.png" alt=""></button>
+        	<button class="nxt-btn"><img src="images/arrow.png" alt=""></button>
 		</div>
+		
 
 		<div class="services-content">
 			<div class="box">
-                <img src="images/books.jpg">
+                <img src="images/XM-1.jpg">
 			</div>
 
 			<div class="box">
-                <img src="images/books.jpg">
-				<!--<h3>Web Development</h3>
-				<p>One way to categorize the activities is in terms of the professional’s area of expertise such as competitive analysis, corporate strategy.</p>
-				<a href="#" class="read">Read More</a>-->
+                <img src="images/XM-2.jpg">
 			</div>
 
 			<div class="box">
-                <img src="images/books.jpg">
-				<!--<h3>Creative Design</h3>
-				<p>One way to categorize the activities is in terms of the professional’s area of expertise such as competitive analysis, corporate strategy.</p>
-				<a href="#" class="read">Read More</a>-->
+                <img src="images/XM-3.jpg">
+			</div>
+
+			<div class="box">
+                <img src="images/XM-4.png">
+			</div>
+
+			<div class="box">
+                <img src="images/XM-5.jpg">
 			</div>
 
 		</div>
 	</section>
-    <!--<section class="about" id="about">
-		<div class="about-img">
-			<img src="img/about.jpg">
-		</div>
-
-		<div class="about-text">
-			<h2>About <span>Us</span></h2>
-			<h4>Creative UI/UX Designer!</h4>
-			<p>Check out 10 Best Design's updates for the top web design & development companies for your needs by reviewing our list & development companies! Find the best web design. Web Design Consulting. Comprehensive Directory. Top Reviewed Design Firms. Types: Enterprise Design Firms, Startup Design Firms, Custom Design Firms, eCommerce Design Firms, App Design Firms. Custom Web Solution. 24x7 Customer Support. Secure Payment Gateway. Get A Free Web Quote. 24/7 Chat Support. Services: Web Page Design, Landing Page Design, App development, Mobile Website Design</p>
-			<a href="#" class="btn">More About</a>
-		</div>
-	</section> -->
     <section class="contact" id="contact">
+		<div class="contact-form">
+			<img src="images/booktree.jpg">
+		</div>
 		<div class="contact-text">
-			<h2>Contact <span>US!</span></h2>
+			<h2>Let's stay book<span class = "h">worm</span> this winter</h2>
 			<h4></h4>
 			<p></p>
-			<div class="list">
-				<li><a href="#">01646895741</a></li>
-				<li><a href="#">thinkingcube@gmail.com</a></li>
-				<li><a href="#">Like Share & Subscribe</a></li>
-			</div>
-
-			<div class="contact-icons">
-				<a href="#"><i class='bx bxl-facebook' ></i></a>
-				<a href="#"><i class='bx bxl-twitter' ></i></a>
-				<a href="#"><i class='bx bxl-instagram-alt' ></i></a>
-				<a href="#"><i class='bx bxl-youtube' ></i></a>
-			</div>
 		</div>
 
-		<div class="contact-form">
-			<form action="">
-				<input type="name" placeholder="Your Name" required>
-				<input type="email" placeholder="Your Email Address" required>
-				<input type="" placeholder="Your Mobile Number" required>
-				<textarea name="" id="" cols="35" rows="10" placeholder="How Can I Help You" required></textarea>
-				<input type="submit" value="Send Message" class="submit" required>
-			</form>
-		</div>
+		
 	</section>
-    <section class="end">
+	<section class="end">
 		<div class="last-text">
 			<p>Copyright © 2022 Thinking Cube All Rights Reserved.</p>
 		</div>
 	</section>
-    
+    <script>
+		const servicescontent = [document.querySelectorAll('.services-content')];
+		const nxtBtn = [document.querySelectorAll('.nxt-btn')];
+		const preBtn = [document.querySelectorAll('.pre-btn')];
+
+		servicescontent.forEach((item, i) =>{
+			let containerDimensions = item.getBoundingClientRect();
+    		let containerWidth = containerDimensions.width;
+
+    		nxtBtn[i].addEventListener('click', () => {
+        		item.scrollLeft += containerWidth;
+    		})
+
+    		preBtn[i].addEventListener('click', () => {
+        		item.scrollLeft -= containerWidth;
+    		})
+		})
+	</script>
 </body>
 </html>
