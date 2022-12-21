@@ -62,10 +62,6 @@ span{
 .navlist a.active{
 	color: var(--main-color);
 }
-#advanced-search-home {
-	padding: 2em 0;
-	margin-top: 97px;
-}
 
 
 #menu-icon{
