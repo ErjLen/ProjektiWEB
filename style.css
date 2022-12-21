@@ -66,28 +66,7 @@ span{
 	padding: 2em 0;
 	margin-top: 97px;
 }
-section {
-	display: block;
-}
-.justify-content-center {
-	justify-content: center !important;
-}
-.row {
-	display: flex;
-	flex-wrap: wrap;
-	margin-right: -15px;
-	margin-left: -15px;
-}
-.advanced-search-bar {
-	justify-content: space-between;
-	align-items: center;
-	background: #fff;
-	border-radius: 28px;
-	border: 4px solid #fff;
-	width: 100%;
-	display: grid;
-	grid-template-columns: auto 65% auto;
-}
+
 
 #menu-icon{
 	font-size: 35px;
