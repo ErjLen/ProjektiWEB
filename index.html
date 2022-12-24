@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel = "stylesheet" href = "style.css" />
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/> 
 	
 
 </head>
@@ -31,20 +32,58 @@
 			<div class="button">
 				<a href="#" class="btn">Log in</a>
                 <a href="#" class="btn">Register</a>
-				<!--<a href="#" class="btn2"><span><i class='bx bx-play'></i></span>Watch My Work</a>-->
 			</div>
 		</div>
 	</section>
-    <section class="services" id="services">
+    <section class="books" id="books">
 		<div class="main-text">
 			<h2>Best Books for <span class = "h">Holidays</span></h2>
 			<br>
-			<button class="pre-btn"><img src="images/arrow.png" alt=""></button>
-        	<button class="nxt-btn"><img src="images/arrow.png" alt=""></button>
 		</div>
 		
+		<div class="swiper mySwiper">
+			<div class="swiper-wrapper">
+			  <div class="swiper-slide">
+				  <div class = "box">
+				  <img src="images/XM-1.jpg">
+				  </div>
+			  </div>
+	  
+			  <div class="swiper-slide">
+				  <div class = "box">
+					  <img src="images/XM-2.jpg">
+				  </div>
+			  </div>
+	  
+			  <div class="swiper-slide">
+				  <div class = "box">
+					  <img src="images/XM-3.jpg">
+				  </div>
+			  </div>
+	  
+			  <div class="swiper-slide">
+				  <div class = "box">
+					  <img src="images/XM-4.png">
+				  </div>
+			  </div>
+	  
+			  <div class="swiper-slide">
+				  <div class = "box">
+					  <img src="images/XM-5.jpg">
+				  </div>
+			  </div>
+			  <div class="swiper-slide">
+				<div class = "box">
+					<img src="images/XM-6.jpg">
+				</div>
+			</div>
+			</div>
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-pagination"></div>
+		  </div>
 
-		<div class="services-content">
+		<!--<div class="services-content">
 			<div class="box">
                 <img src="images/XM-1.jpg">
 			</div>
@@ -65,7 +104,7 @@
                 <img src="images/XM-5.jpg">
 			</div>
 
-		</div>
+		</div> -->
 	</section>
     <section class="contact" id="contact">
 		<div class="contact-form">
@@ -84,23 +123,24 @@
 			<p>Copyright © 2022 Thinking Cube All Rights Reserved.</p>
 		</div>
 	</section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
     <script>
-		const servicescontent = [document.querySelectorAll('.services-content')];
-		const nxtBtn = [document.querySelectorAll('.nxt-btn')];
-		const preBtn = [document.querySelectorAll('.pre-btn')];
-
-		servicescontent.forEach((item, i) =>{
-			let containerDimensions = item.getBoundingClientRect();
-    		let containerWidth = containerDimensions.width;
-
-    		nxtBtn[i].addEventListener('click', () => {
-        		item.scrollLeft += containerWidth;
-    		})
-
-    		preBtn[i].addEventListener('click', () => {
-        		item.scrollLeft -= containerWidth;
-    		})
-		})
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
 	</script>
 </body>
 </html>
