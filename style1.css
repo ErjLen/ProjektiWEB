@@ -22,6 +22,7 @@
     align-items: center;
 }
 .card-login{
+    margin-top: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -181,4 +182,40 @@ input[type="checkbox"]:checked ~ label .tick{
 	color: var(--second-color);
 	font-size: 14px;
     text-align: center;
+}
+#username-error {
+    color: #cc5a34;
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 3px;
+    display: none;
+}
+#password-error {
+    color: #cc5a34;
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 3px;
+    display: none;
+}
+#email-error {
+    color: #cc5a34;
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 3px;
+    display: none;
+}
+#id-error {
+    color: #cc5a34;
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 3px;
+    display: none;
 }
