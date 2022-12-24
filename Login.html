@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="style1.css">
+  <title>Login</title>
+</head>
+
+
+<body>
+  <header>
+		<a href="#" class="logo"><span>T</span>hinking <span>C</span>ube</a>
+
+		<ul class="navlist">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="aboutUs.html"class="active">About Us</a></li>
+			<li><a href="books.html">Books</a></li>
+			<li><a href="contactus.html">Contact Us</a></li>
+		</ul>
+    </header>
+  <div class="container">
+    <div class="card-login">
+      <form action="index.html">
+        <h1 class="header-main">Login</h1>
+        <div class="input-container">
+          <ion-icon name="people-outline"></ion-icon>
+          <input type="text" name="username" id="username" placeholder="Username" required/>
+        </div>
+        <div class="input-container">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <input type="password" name="password" id="password" placeholder="Password" required/>
+        </div>
+        <div class="checkbox-container">
+          <input type="checkbox" name="check" id="toggle" />
+          <label for="toggle">
+            <div class="checkbox-border-button">
+              <div>
+                <ion-icon name="checkmark-outline" class="tick"></ion-icon>
+              </div>
+            </div>
+            <p>Remember me</p>
+          </label>
+        </div>
+        <input type="submit" value="Login" class="button" />
+        <div class="signup-text">
+          <p>Don't have an account?<a href="Register.html"> Register now!</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+  <section class="end">
+		<div class="last-text">
+			<p>Copyright © 2022 Thinking Cube All Rights Reserved.</p>
+		</div>
+	</section>
+
+  <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js">
+
+
+        function validate(){
+            var username = document.getElementById("username");
+            var password = document.getElementById("password");
+            var mesazhi = document.getElementById("mesazhi");
+
+            if(username.value.trim() == "" || password.value == "" || mesazhi.value == ""){
+                alert("No blank values allowed");
+            }else{
+                true
+            }
+        }
+
+  </script>
+</body>
+
+</html>
