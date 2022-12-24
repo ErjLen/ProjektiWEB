@@ -23,16 +23,22 @@
     </header>
   <div class="container">
     <div class="card-login">
-      <form action="index.html">
+      <form action="index.html" id="login-form">
         <h1 class="header-main">Login</h1>
         <div class="input-container">
           <ion-icon name="people-outline"></ion-icon>
           <input type="text" name="username" id="username" placeholder="Username" required/>
         </div>
+        <p id="username-error">Please enter a valid Username!
+          (6-10 characters)
+        </p>
         <div class="input-container">
           <ion-icon name="lock-closed-outline"></ion-icon>
           <input type="password" name="password" id="password" placeholder="Password" required/>
         </div>
+        <p id="password-error">Please enter a valid Password!
+          (At least 8 characters, must include a special character)
+        </p>
         <div class="checkbox-container">
           <input type="checkbox" name="check" id="toggle" />
           <label for="toggle">
@@ -57,20 +63,39 @@
 		</div>
 	</section>
 
-  <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js">
+  <script>
 
+var username=document.getElementById('username');
+var usernameErr=document.getElementById ('username-error');
 
-        function validate(){
-            var username = document.getElementById("username");
-            var password = document.getElementById("password");
-            var mesazhi = document.getElementById("mesazhi");
+username.addEventListener ('input', function (e){
+  var pattern=/^[\w-\.!?]{6,10}$/;
+  var currentValue=e.target.value;
+  var valid=pattern.test(currentValue);
 
-            if(username.value.trim() == "" || password.value == "" || mesazhi.value == ""){
-                alert("No blank values allowed");
-            }else{
-                true
-            }
-        }
+  if(valid) {
+    usernameErr.style.display='none'
+  }
+  else {
+    usernameErr.style.display='block'
+  }
+})
+
+var password=document.getElementById('password');
+var passwordErr=document.getElementById ('password-error');
+
+password.addEventListener ('input', function (e){
+  var passPattern= /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
+  var currentValue1=e.target.value;
+  var valid1=passPattern.test(currentValue1);
+
+  if(valid1) {
+    passwordErr.style.display='none'
+  }
+  else {
+    passwordErr.style.display='block'
+  }
+})
 
   </script>
 </body>

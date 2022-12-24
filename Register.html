@@ -22,25 +22,35 @@
     </header>
     <div class="container">
         <div class="card-login">
-            <form action="#">
+            <form action="index.html" id="register-form">
                 <h1 class="header-main">Register</h1>
                 <div class="input-container">
                     <ion-icon name="people-outline"></ion-icon>
-                    <input type="text" name="username" id="username" placeholder="Username" />
+                    <input type="text" name="username" id="username" placeholder="Username" required />
                 </div>
+                <p id="username-error">Please enter a valid Username!
+                    (6-10 characters)
+                  </p>
                 <div class="input-container">
                     <ion-icon name="mail-outline"></ion-icon>
-                    <input type="email" name="email" id="email" placeholder="Email" />
+                    <input type="email" name="email" id="email" placeholder="Email" required />
                 </div>
+                <p id="email-error">Please enter a valid Email Address!
+                  </p>
                 <div class="input-container">
                     <ion-icon name="lock-closed-outline"></ion-icon>
-                    <input type="password" name="password" id="password" placeholder="Password" />
+                    <input type="password" name="password" id="password" placeholder="Password" required/>
                 </div>
+                <p id="password-error">Please enter a valid Password!
+                    (At least 8 characters, must include a special character)
+                  </p>
                 <div class="input-container">
                     <ion-icon name="card-outline"></ion-icon>
-                    <input type="number" name="number" id="number" placeholder="ID" />
+                    <input type="number" name="number" id="number" placeholder="ID" required />
                 </div>
-
+                <p id="id-error">Please enter a valid ID!
+                    (At least 5 numbers)
+                  </p>
                 <input type="submit" value="Register" class="button" />
                 <div class="signup-text">
                     <p>Already a Member?<a href="Login.html"> Login Here!</a></p>
@@ -53,7 +63,75 @@
 			<p>Copyright © 2022 Thinking Cube All Rights Reserved.</p>
 		</div>
 	</section>
-    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <script>
+
+        var username=document.getElementById('username');
+        var usernameErr=document.getElementById ('username-error');
+        
+        username.addEventListener ('input', function (e){
+          var pattern=/^[\w-\.!?]{6,10}$/;
+          var currentValue=e.target.value;
+          var valid=pattern.test(currentValue);
+        
+          if(valid) {
+            usernameErr.style.display='none'
+          }
+          else {
+            usernameErr.style.display='block'
+          }
+        })
+
+        var password=document.getElementById('password');
+        var passwordErr=document.getElementById ('password-error');
+
+        password.addEventListener ('input', function (e){
+         var passPattern= /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
+        var currentValue1=e.target.value;
+        var valid1=passPattern.test(currentValue1);
+
+        if(valid1) {
+         passwordErr.style.display='none'
+        }
+        else {
+         passwordErr.style.display='block'
+          }
+        })
+        
+        var email=document.getElementById('email');
+        var emailErr=document.getElementById ('email-error');
+
+        email.addEventListener ('input', function (e){
+        var ePattern= /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
+      
+        var currentValue2=e.target.value;
+        var valid2=ePattern.test(currentValue2);
+
+        if(valid2) {
+         emailErr.style.display='none'
+        }
+        else {
+         emailErr.style.display='block'
+          }
+        })
+
+        var ID=document.getElementById('number');
+        var idErr=document.getElementById ('id-error');
+
+        ID.addEventListener ('input', function (e){
+        var idPattern= /^[0-9]{5,}$/;
+      
+        var currentValue3=e.target.value;
+        var valid3=idPattern.test(currentValue3);
+
+        if(valid3) {
+         idErr.style.display='none'
+        }
+        else {
+         idErr.style.display='block'
+          }
+        })
+          </script>
+    
 </body>
 
 </html>
